@@ -22,4 +22,5 @@ locals {
 inputs = {
   env        = local.env_vars.env
   prefix_env = local.env_vars.env
+  public_subnets = try(local.env_vars.public_subnets, {})
 }

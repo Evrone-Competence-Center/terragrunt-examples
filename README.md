@@ -11,7 +11,8 @@ Before you can use these examples, make sure you have the following prerequisite
 
 ## Usage
 
-- [Yandex Cloud](yandex/README.md)
+### Simple terragrunt examples
+- [Yandex Cloud](simple/yandex/README.md)
 
 ## License
 This repository is licensed under the MIT License.

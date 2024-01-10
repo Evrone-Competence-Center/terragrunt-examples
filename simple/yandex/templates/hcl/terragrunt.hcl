@@ -19,6 +19,14 @@ locals {
   )
 }
 
+#dependency "vpc" {
+#  config_path = "../vpc"
+
+#  mock_outputs = {
+#    vpc_id = "vpc-12345678"
+#  }
+#}
+
 inputs = {
   env        = local.env_vars.env
   prefix_env = local.env_vars.env

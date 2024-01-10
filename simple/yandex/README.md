@@ -33,7 +33,15 @@ s3:
 
 ### Update terragrunt configuration
 
-In your terminal shell run:
+Go to TENANT folder (eg. `staging`):
+
+```shel
+cd envs/staging
+```
+
+Make sure you have all environment variables are set.
+
+And run:
 
 ```shell
 terragrunt run-all plan
@@ -59,7 +67,7 @@ And cleanup S3 bucket.
 
 ## Module templates
 
-You can find empy template to build your module for thid configuration.
+You can find empy template to build your module for this configuration.
 Look at `./templates/module` folder:
 
 ```
@@ -76,7 +84,7 @@ Just copy this template to `./modules` folder and write your module.
 To use your modules from terragrunt, you need:
 
 - Copy `./templates/env` folder to `./envs/${TENANT}` folder, rename it to module name (like in `./modules` folder) 
-- Add (update) variables to `env.yaml` file in `./envs/${TENANT}/${MODULE}` folder.
+- Add (update) variables in `env.yaml` file from `./envs/${TENANT}/${MODULE}` folder.
 - Refactor `terragrunt.hcl` file to use needed module in `source = "${find_in_parent_folders("modules/xxx")}///"` (change `xxx` to you module folder name), add needed module inputs.
 
 Now you can run `terragrunt run-all plan` and `terragrunt run-all apply` with new module in configuration.

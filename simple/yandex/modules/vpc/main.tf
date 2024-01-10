@@ -1,12 +1,12 @@
 locals {
   public_subnets = { for k, v in var.public_subnets : k => {
-    "v4_cidr_blocks": [v],
-    "zone": k
+    "v4_cidr_blocks" : [v],
+    "zone" : k
   } }
   private_subnets = { for k, v in var.private_subnets : k => {
-    "v4_cidr_blocks": [v],
-    "zone": k
-  }}
+    "v4_cidr_blocks" : [v],
+    "zone" : k
+  } }
 }
 
 module "vpc" {

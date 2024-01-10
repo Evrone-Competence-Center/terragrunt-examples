@@ -5,7 +5,7 @@ variable "prefix_env" {
 
 variable "public_subnets" {
   description = "Public Subnets"
-  type = map(string)
+  type        = map(string)
   default = {
     ru-central1-a = "10.121.0.0/16"
     ru-central1-b = "10.131.0.0/16"
@@ -15,7 +15,7 @@ variable "public_subnets" {
 
 variable "private_subnets" {
   description = "Private Subnets"
-  type = map(string)
+  type        = map(string)
   default = {
     ru-central1-a = "10.221.0.0/16"
     ru-central1-b = "10.231.0.0/16"

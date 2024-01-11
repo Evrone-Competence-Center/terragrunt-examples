@@ -9,7 +9,7 @@ remote_state {
     if_exists = "overwrite_terragrunt"
   }
   config = {
-    bucket           = lookup(local.env_content.s3, "bucket", "bucket-for-example-tf-state")
+    bucket           = lookup(local.env_content.remote_state.s3, "bucket", "bucket-for-example-tf-state")
     key              = "${path_relative_to_include()}/terraform.tfstate"
     endpoint         = "https://storage.yandexcloud.net"
     region           = "ru-cetnral1"

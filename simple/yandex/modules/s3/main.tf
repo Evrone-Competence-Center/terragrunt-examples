@@ -1,7 +1,4 @@
 locals {
-  # buckets = {
-  #   for k,v in var.buckets: k => v != null ? v : {}
-  # }
   buckets = var.buckets
 }
 

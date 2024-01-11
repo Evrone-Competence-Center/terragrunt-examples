@@ -17,6 +17,13 @@ locals {
     local.env_content,       # overrides with tenant(env) variables
     local.env_module_content # overrides with module variables
   )
+
+  buckets_raw = lookup(local.env_vars, "s3", {})
+  buckets = merge(
+    { for k, v in local.buckets_raw : k => {} },
+    { for k, v in local.buckets_raw : k => v if v != null }, 
+    {}
+  )
 }
 
 inputs = {
@@ -24,5 +31,5 @@ inputs = {
   prefix_env = local.env_vars.env
 
   # module variables
-  buckets = lookup(local.env_vars, "s3", {})
+  buckets = local.buckets
 }
